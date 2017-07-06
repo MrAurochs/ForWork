@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<style type = "text/css"> 
+			body {background-color: rgb(0,0,0)}
+		</style> 
+	</head> 
+	
+	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> 
+		<br> 
+		<br> 
+		<audio src = "AudioVideo/hero.wav" autoplay loop type = "audio/x-wav" > </audio> 
+		<p style = "text-align: center"> 
+			<img src = "Images/Dragonette.png" style="position: relative">
+		</p>
+		<script> 
+			var dragon = document.querySelector("img");
+			var angle = 0, lastTime = null;
+			function animate(time){
+				
+				if (lastTime != null)
+					{angle += (time - lastTime) * 0.001};
+				lastTime = time;
+				dragon.style.top = (Math.sin(angle) *100) + "px";
+				dragon.style.left = (Math.cos(angle) *200) + "px";
+				 
+				
+				requestAnimationFrame(animate);
+			}
+			
+			
+			requestAnimationFrame(animate)
+		
+		</script> 
+	</body>
+
+</html> 
